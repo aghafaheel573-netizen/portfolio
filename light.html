@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marks & Grade Check</title>
+</head>
+<body>
+      <style>
+   body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    width: 320px;
+    color: #fff;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+input {
+    width: 80%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+input:focus {
+    box-shadow: 0 0 10px rgba(255,255,255,0.6);
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    background: #fff;
+    color: #764ba2;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ffd369;
+    color: #333;
+    transform: scale(1.05);
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+ </style>
+    <div class="container">
+    <h2>Enter your marks:</h2>
+    <input type="number" id="marks">
+    <button onclick="checkMarks()">Check</button>
+    <h1 id="result"></h1>
+</div>
+
+    <script>
+        function checkMarks() {
+            let marks = document.getElementById("marks").value;
+            if (marks < 0 || marks > 100 || isNaN (marks)) return result.innerHTML="Invalid Input";
+        
+
+            if (marks >= 90) {
+                document.getElementById("result").innerHTML = "Pass - Grade A+";
+            }
+               else if (marks >= 80) {
+                document.getElementById("result").innerHTML = "Pass - Grade A";
+                
+            } 
+            else if (marks >= 60) {
+                document.getElementById("result").innerHTML = "Pass - Grade B";
+                
+            } 
+            else if (marks >= 40) {
+                document.getElementById("result").innerHTML = "Pass - Grade C";
+                
+            } 
+            else {
+                document.getElementById("result").innerHTML = "Fail";
+            
+            }
+        }
+        
+    </script>
+
+</body>
+</html>
